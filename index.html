@@ -185,12 +185,6 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;letter-spacing:-.02em}
 .proj.hide{display:none}
 .proj.featured{grid-column:span 2}
 .proj.wide{grid-column:1/-1}
-.proj-top{height:150px;position:relative;display:flex;align-items:flex-end;padding:18px;overflow:hidden}
-.proj.featured .proj-top{height:190px}
-.proj-top::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1px);background-size:14px 14px;mask-image:linear-gradient(120deg,transparent 30%,#000);opacity:.5}
-.proj-icon{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:rgba(7,9,13,.55);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);position:relative;z-index:1}
-.proj-icon svg{width:26px;height:26px}
-.proj-cat{position:absolute;top:16px;right:16px;z-index:1;font-family:var(--font-mono);font-size:.7rem;padding:5px 10px;border-radius:999px;background:rgba(7,9,13,.55);border:1px solid rgba(255,255,255,.15);color:#fff;letter-spacing:.04em}
 .proj-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
 .proj h3{font-size:1.2rem}
 .proj p{color:var(--muted);font-size:.93rem}
@@ -206,6 +200,123 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;letter-spacing:-.02em}
 .app-pills{display:flex;flex-wrap:wrap;gap:10px}
 .app-pills span{padding:9px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:.86rem}
 .app-pills span em{font-style:normal;color:var(--dim);font-size:.78rem;margin-left:6px}
+
+
+/* ===== app feature banners ===== */
+.bn{--bb:#111820;--ba:#3ddc84;position:relative;height:250px;overflow:hidden;background:var(--bb);padding:22px;border-bottom:1px solid var(--line)}
+.bn::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1.3px);background-size:16px 16px;pointer-events:none}
+.bn::after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-50px;top:-70px;border:1px solid color-mix(in srgb,var(--ba) 40%,transparent);box-shadow:0 0 0 38px color-mix(in srgb,var(--ba) 7%,transparent),0 0 0 76px color-mix(in srgb,var(--ba) 4%,transparent);pointer-events:none}
+.proj.featured .bn,.proj.wide .bn{height:270px}
+.bn-copy{position:relative;z-index:3;max-width:calc(100% - 112px)}
+.proj.featured .bn-copy,.proj.wide .bn-copy{max-width:52%}
+.bn-app{display:flex;gap:10px;align-items:center}
+.bn-icon{width:42px;height:42px;border-radius:12px;background:var(--ba);color:#07090d;display:grid;place-items:center;flex:none;box-shadow:0 10px 22px -10px var(--ba)}
+.bn-icon svg{width:22px;height:22px}
+.bn-app b{display:block;font-family:var(--font-head);font-size:.94rem;line-height:1.2;color:#fff;white-space:nowrap}
+.bn-app small{color:rgba(255,255,255,.62);font-size:.72rem;line-height:1.3;display:block;white-space:nowrap}
+.bn-pills{display:flex;flex-direction:column;gap:7px;margin-top:16px}
+.bn-pills span{display:inline-flex;align-items:center;gap:7px;width:fit-content;font-size:.72rem;font-weight:500;padding:5px 10px;border-radius:8px;white-space:nowrap;background:rgba(7,9,13,.5);border:1px solid rgba(255,255,255,.12);color:#eef2f7}
+.bn-pills span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ba);flex:none}
+.dev{position:absolute;z-index:2;right:-4px;top:30px;width:128px;height:252px;border-radius:22px;background:#0a0d13;border:5px solid #262e3b;box-shadow:0 26px 44px -12px rgba(0,0,0,.7);overflow:hidden;transform:rotate(5deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.proj:hover .dev{transform:rotate(0deg) translateY(-6px)}
+.dev::before{content:"";position:absolute;top:5px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#262e3b;z-index:2}
+.dev-in{position:absolute;inset:0;padding:16px 7px 7px;display:flex;flex-direction:column;gap:6px;font-size:.5rem;color:#dfe5ee;line-height:1.3}
+.dev.land{width:156px;height:104px;right:-8px;bottom:-4px;top:auto;bottom:24px;border-radius:14px;transform:rotate(-3deg)}
+.dev.land::before{display:none}
+.dev.land .dev-in{padding:7px}
+
+.proj.featured .dev{right:64px;top:30px;width:142px;height:282px}
+.proj.wide .dev.land{right:44px;bottom:40px;width:300px;height:180px}
+.ui-top{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.52rem}
+.ui-top small{color:#8994a5;font-weight:500;font-size:.44rem}
+.ui-card{display:flex;gap:6px;align-items:center;padding:6px;border-radius:8px;background:#161c27;border:1px solid rgba(255,255,255,.07)}
+.ui-card b{display:block;font-size:.52rem}.ui-card small{font-size:.44rem;color:#8994a5}
+.ui-dot{width:14px;height:14px;border-radius:50%;background:var(--ba);flex:none}
+.bn-float{position:absolute;z-index:3;display:flex;gap:9px;align-items:center;padding:10px 13px;border-radius:12px;background:#121821;border:1px solid rgba(255,255,255,.13);box-shadow:0 18px 30px -12px rgba(0,0,0,.75);animation:bob 5s ease-in-out infinite}
+.bn-float i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:color-mix(in srgb,var(--fc,#3ddc84) 18%,transparent);color:var(--fc,#3ddc84)}
+.bn-float i svg{width:15px;height:15px}
+.bn-float b{display:block;font-size:.76rem;color:#fff}.bn-float small{color:#8994a5;font-size:.68rem}
+/* map */
+.mm{flex:1;border-radius:10px;position:relative;overflow:hidden;background-color:#13241d;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:14px 14px}
+.mm.dark{background-color:#141a25}
+.rd{position:absolute;background:#2b3c36;border-radius:3px}.mm.dark .rd{background:#252e3d}
+.rd.h{left:0;right:0;height:6px}.rd.v{top:0;bottom:0;width:6px}
+.pn{position:absolute;width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--ba);display:grid;place-items:center;box-shadow:0 4px 8px rgba(0,0,0,.4)}
+.pn span{transform:rotate(45deg);font-size:.42rem;font-weight:800;color:#04130a}
+.pn.alt{background:#8b7bff}.pn.alt span{color:#fff}
+.fence{position:absolute;width:58px;height:58px;border-radius:50%;border:1.5px dashed var(--ba);background:color-mix(in srgb,var(--ba) 10%,transparent)}
+.mm svg{position:absolute;inset:0;width:100%;height:100%}
+/* iptv */
+.tvv{position:relative;flex:1;border-radius:8px;background:#2a2063;padding:6px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.tvv svg.scene{position:absolute;inset:0;width:100%;height:100%}
+.tvv b{position:relative;font-size:.56rem}
+.live{position:absolute;top:6px;left:6px;background:#ff4d6d;color:#fff;font-weight:800;padding:1px 5px;border-radius:4px;font-size:.42rem;letter-spacing:.04em;z-index:1}
+.pb{position:relative;height:3px;border-radius:3px;background:rgba(255,255,255,.25);margin-top:4px;overflow:hidden}.pb i{display:block;height:100%;background:var(--ba)}
+.playb{position:absolute;left:50%;top:44%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.playb::after{content:"";border-left:7px solid #111;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+.tvrow{display:flex;gap:4px}.tvrow i{flex:1;font-style:normal;text-align:center;padding:4px 0;border-radius:5px;background:#161c27;font-size:.42rem;color:#aab4c3}
+.tvrow i.on{background:var(--ba);color:#0b0820;font-weight:700}
+/* ride */
+.offer-s{display:flex;justify-content:space-between;align-items:center;padding:5px 6px;border-radius:7px;background:#161c27;border:1px solid rgba(255,255,255,.07)}
+.offer-s b{font-size:.6rem;display:block}.offer-s small{font-size:.42rem;color:#8994a5}
+.acc{background:var(--ba);color:#1b1000;font-weight:800;padding:2px 5px;border-radius:4px;font-size:.42rem}
+/* cleaner */
+.ring{width:84px;height:84px;margin:4px auto 2px;display:block}
+.bar-row{display:grid;grid-template-columns:1fr auto;gap:2px 6px;align-items:center;font-size:.46rem}
+.bar-row .bar{grid-column:1/-1;height:4px;border-radius:4px;background:#1e2633;overflow:hidden}.bar-row .bar i{display:block;height:100%;background:var(--ba)}
+.cbtn{margin-top:auto;text-align:center;padding:6px;border-radius:7px;background:var(--ba);color:#021018;font-weight:800;font-size:.5rem;letter-spacing:.04em}
+/* video */
+.vid{position:relative;flex:1;border-radius:8px;overflow:hidden;background:#3b1428}
+.vid svg.scene{position:absolute;inset:0;width:100%;height:100%}
+.vid .vt{position:absolute;top:5px;left:6px;right:6px;display:flex;justify-content:space-between;font-size:.44rem;font-weight:600}
+.vid .vb{position:absolute;left:6px;right:6px;bottom:5px;font-size:.4rem;color:#e7d4dc}
+.vid .side{position:absolute;top:22%;bottom:30%;width:3px;border-radius:3px;background:rgba(255,255,255,.25)}
+.vid .side i{position:absolute;bottom:0;left:0;right:0;border-radius:3px;background:#fff}
+/* caller */
+.call{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding-top:8px}
+.cav{width:40px;height:40px;border-radius:50%;background:#1f2a24;display:grid;place-items:center;color:#8fb8a1;margin-bottom:4px;box-shadow:0 0 0 5px rgba(255,77,109,.12),0 0 0 10px rgba(255,77,109,.06)}
+.cav svg{width:20px;height:20px}
+.call b{font-size:.62rem}.call small{color:#8994a5;font-size:.46rem}
+.spam{margin-top:4px;background:rgba(255,77,109,.16);color:#ff8fa6;border:1px solid rgba(255,77,109,.4);padding:2px 6px;border-radius:999px;font-weight:700;font-size:.44rem}
+.call-info{width:100%;margin-top:6px;display:grid;gap:3px}
+.call-info div{display:flex;justify-content:space-between;padding:4px 6px;border-radius:6px;background:#161c27;font-size:.44rem;color:#aab4c3}
+.call-btns{display:flex;justify-content:space-around;margin-top:auto;padding-bottom:6px}
+.call-btns i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.call-btns svg{width:12px;height:12px}
+/* keyboard */
+.kb-out{border-radius:8px;background:#161c27;border:1px solid rgba(255,255,255,.07);padding:6px;display:grid;gap:4px}
+.kb-out span{font-size:.62rem;white-space:nowrap;overflow:hidden}
+.kb-out span.on{color:var(--ba)}
+.kb-chips{display:flex;gap:3px}.kb-chips i{font-style:normal;flex:1;text-align:center;padding:3px 0;border-radius:5px;background:#161c27;font-size:.42rem;color:#aab4c3}
+.kb-chips i.on{background:var(--ba);color:#140c2c;font-weight:700}
+.keys{margin-top:auto;display:grid;grid-template-columns:repeat(10,1fr);gap:2px;padding:4px;border-radius:8px;background:#121722}
+.keys i{height:13px;border-radius:2px;background:#232b39;font-style:normal;font-size:.36rem;display:grid;place-items:center;color:#c8d0db}
+.keys i.w2{grid-column:span 2}.keys i.w6{grid-column:span 6;background:#2c3546}
+/* locker */
+.lockv{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding-top:6px}
+.lockv svg.lk{width:22px;height:22px;color:var(--ba)}
+.lockv b{font-size:.56rem}
+.pins{display:flex;gap:6px;margin:2px 0 4px}.pins i{width:7px;height:7px;border-radius:50%;border:1px solid #9fb3d6}.pins i.f{background:#9fb3d6}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:100%;padding:0 6px}
+.pad i{font-style:normal;height:20px;border-radius:50%;display:grid;place-items:center;background:#161c27;font-size:.55rem;font-weight:600;aspect-ratio:1;margin:0 auto}
+.lock-apps{display:flex;gap:4px;margin-top:auto;padding-bottom:4px}
+.lock-apps i{position:relative;width:18px;height:18px;border-radius:5px}
+.lock-apps i::after{content:"";position:absolute;right:-3px;bottom:-3px;width:8px;height:8px;border-radius:50%;background:#0a0d13;border:1.5px solid var(--ba)}
+/* code */
+.dev.code{background:#0b1210}
+.code-in{font-family:var(--font-mono);font-size:.5rem;line-height:1.55;color:#9fb3a8;white-space:pre;overflow:hidden}
+.code-dots{display:flex;gap:4px;margin-bottom:6px}.code-dots i{width:6px;height:6px;border-radius:50%}
+.proj.wide .code-in{font-size:.68rem}
+.c-k{color:#3ddc84}.c-s{color:#ffb547}.c-n{color:#8b7bff}.c-m{color:#6b7686}
+.proj-kicker{font-family:var(--font-mono);font-size:.7rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:1100px){.proj.featured .bn-float{display:none}}
+@media (max-width:680px){
+  .proj.featured .dev{right:-4px;width:128px;height:252px}
+  .bn-copy,.proj.featured .bn-copy,.proj.wide .bn-copy{max-width:calc(100% - 124px)}
+  .proj.wide .dev.land{right:-8px;bottom:-4px;width:156px;height:104px}
+  .proj.wide .code-in{font-size:.5rem}
+  .proj.featured .bn,.proj.wide .bn{height:250px}
+}
 
 /* about / skills */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
@@ -519,11 +630,14 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
     <div class="projects" id="projects">
       <!-- Phone Tracker -->
       <article class="proj featured spot reveal" data-cat="location">
-        <div class="proj-top" style="background:linear-gradient(135deg,#0f5132,#14805a 50%,#3ddc84)">
-          <span class="proj-cat">Location · Featured</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="bn" style="--bb:#0f2a20;--ba:#3ddc84">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><b>Family Locator</b><small>Phone Tracker · Live GPS</small></div></div>
+            <div class="bn-pills"><span>Live location sharing</span><span>Geofence &amp; arrival alerts</span><span>Family circles via phone no.</span></div></div>
+          <div class="dev"><div class="dev-in"><div class="ui-top"><span>My Circle</span><small>3 online</small></div><div class="mm"><i class="rd h" style="top:36%"></i><i class="rd v" style="left:58%"></i><i class="rd h" style="top:74%;right:30%"></i><i class="rd v" style="left:18%;top:36%"></i><i class="fence" style="left:4px;top:8px"></i><b class="pn" style="left:22px;top:20px"><span>A</span></b><b class="pn alt" style="left:78px;top:110px"><span>S</span></b><b class="pn" style="left:40px;top:150px;background:#ffb547"><span>M</span></b></div><div class="ui-card"><i class="ui-dot"></i><div><b>Ali · At School</b><small>Arrived 2 min ago</small></div></div></div></div>
+          <div class="bn-float" style="right:230px;bottom:30px;--fc:#3ddc84"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></i><div><b>Sara left Home</b><small>Geofence alert · just now</small></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Location · Featured</span>
           <h3>Phone Tracker: Family Locator</h3>
           <p>A real-time location sharing app that lets families see each other on a live map, get alerts and stay connected, with a full monetization stack.</p>
           <ul class="feats">
@@ -540,11 +654,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- IPTV -->
       <article class="proj spot reveal" data-cat="media">
-        <div class="proj-top" style="background:linear-gradient(135deg,#2b1660,#5b3cc4 55%,#8b7bff)">
-          <span class="proj-cat">Media</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="m17 2-5 5-5-5"/></svg></div>
+        <div class="bn" style="--bb:#1b1540;--ba:#8b7bff">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="m17 2-5 5-5-5"/></svg></span><div><b>IPTV Player</b><small>Live TV · VOD</small></div></div>
+            <div class="bn-pills"><span>Live TV &amp; VOD</span><span>HLS · DASH · RTSP</span><span>Favourites &amp; history</span></div></div>
+          <div class="dev land"><div class="dev-in"><div class="tvv"><svg class="scene" viewBox="0 0 180 80" preserveAspectRatio="xMidYMid slice"><rect width="180" height="80" fill="#2a2063"/><ellipse cx="90" cy="86" rx="110" ry="36" fill="#1e7a4a"/><ellipse cx="90" cy="86" rx="70" ry="20" fill="#239257"/><rect x="0" y="0" width="180" height="22" fill="#231a55"/><circle cx="30" cy="10" r="3" fill="#fff" opacity=".7"/><circle cx="150" cy="10" r="3" fill="#fff" opacity=".7"/></svg><span class="live">● LIVE</span><span class="playb"></span><b>Sports HD · Final</b><div class="pb"><i style="width:62%"></i></div></div><div class="tvrow"><i class="on">Sports</i><i>News</i><i>Movies</i><i>Kids</i></div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Media</span>
           <h3>IPTV Player</h3>
           <p>A live TV &amp; VOD player supporting every major streaming protocol, with favourites and history stored offline.</p>
           <ul class="feats"><li>HLS, DASH &amp; RTSP via Media3 ExoPlayer</li><li>Room DB for playlists &amp; favourites</li><li>Remote Config, Perf monitoring, in-app review</li></ul>
@@ -554,11 +670,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- Ride hailing -->
       <article class="proj spot reveal" data-cat="location">
-        <div class="proj-top" style="background:linear-gradient(135deg,#5c3500,#c77a00 55%,#ffb547)">
-          <span class="proj-cat">Mobility</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.5-6h9L18 17"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/><path d="M9 11V8h6v3"/></svg></div>
+        <div class="bn" style="--bb:#2a1c06;--ba:#ffb547">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.5-6h9L18 17"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/><path d="M9 11V8h6v3"/></svg></span><div><b>Ride Hailing</b><small>Name your own fare</small></div></div>
+            <div class="bn-pills"><span>Offer your own price</span><span>Driver counter-offers</span><span>Live route on the map</span></div></div>
+          <div class="dev"><div class="dev-in"><div class="ui-top"><span>Pick-up</span><small>OSM</small></div><div class="mm dark"><i class="rd h" style="top:30%"></i><i class="rd v" style="left:40%"></i><i class="rd h" style="top:70%"></i><svg viewBox="0 0 110 120" fill="none"><path d="M18 100 C 40 86, 30 60, 58 58 S 90 30, 94 16" stroke="#ffb547" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 6"/><circle cx="18" cy="100" r="5" fill="#3ddc84" stroke="#0a0d13" stroke-width="2"/><circle cx="94" cy="16" r="5" fill="#ff5d8f" stroke="#0a0d13" stroke-width="2"/></svg></div><div class="ui-card" style="justify-content:space-between"><div><small>Your offer</small><b style="font-size:.66rem">PKR 400</b></div><span class="acc" style="background:#232b39;color:#fff">Raise</span></div><div class="offer-s"><div><small>Corolla · 4.9★</small><b>PKR 450</b></div><span class="acc">ACCEPT</span></div><div class="offer-s"><div><small>Alto · 4.8★</small><b>PKR 420</b></div><span class="acc">ACCEPT</span></div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Mobility</span>
           <h3>Ride-Hailing App (Fare Bidding)</h3>
           <p>A passenger app where riders name their own fare and drivers respond with offers, similar to the inDrive model.</p>
           <ul class="feats"><li>OpenStreetMap (osmdroid) route &amp; pickup flow</li><li>MVVM + Room + DataStore + Navigation</li><li>Unit tested with Robolectric &amp; coroutine tests</li></ul>
@@ -568,11 +686,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- Phone Cleaner -->
       <article class="proj spot reveal" data-cat="utility">
-        <div class="proj-top" style="background:linear-gradient(135deg,#053b4a,#0a7a96 55%,#4cc9f0)">
-          <span class="proj-cat">Utility</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2Z"/><path d="M19 17v4M17 19h4"/></svg></div>
+        <div class="bn" style="--bb:#06283a;--ba:#4cc9f0">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2Z"/><path d="M19 17v4M17 19h4"/></svg></span><div><b>Phone Cleaner</b><small>Free up storage in one tap</small></div></div>
+            <div class="bn-pills"><span>Junk &amp; cache scan</span><span>Large &amp; duplicate files</span><span>One-tap clean</span></div></div>
+          <div class="dev"><div class="dev-in"><div class="ui-top"><span>Storage</span><small>128 GB</small></div><svg class="ring" viewBox="0 0 80 80"><circle cx="40" cy="40" r="31" stroke="#1e2633" stroke-width="8" fill="none"/><circle cx="40" cy="40" r="31" stroke="#4cc9f0" stroke-width="8" fill="none" stroke-dasharray="140 195" stroke-linecap="round" transform="rotate(-90 40 40)"/><text x="40" y="42" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="Sora,Arial">72%</text><text x="40" y="53" text-anchor="middle" font-size="6" fill="#8994a5" font-family="Inter,Arial">used</text></svg><div class="bar-row"><span>Junk files</span><b>1.8 GB</b><div class="bar"><i style="width:70%"></i></div></div><div class="bar-row"><span>Duplicate photos</span><b>640 MB</b><div class="bar"><i style="width:40%"></i></div></div><div class="bar-row"><span>Large videos</span><b>3.1 GB</b><div class="bar"><i style="width:85%"></i></div></div><div class="cbtn">CLEAN NOW</div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Utility</span>
           <h3>Phone Cleaner</h3>
           <p>A storage cleaner that finds junk and large files and frees up space in one tap, with a polished onboarding flow.</p>
           <ul class="feats"><li>Junk, cache &amp; large-file scanning</li><li>Splash API, Navigation, Lottie animations</li><li>Ads mediation, subscriptions, in-app updates</li></ul>
@@ -582,11 +702,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- Video Player -->
       <article class="proj spot reveal" data-cat="media">
-        <div class="proj-top" style="background:linear-gradient(135deg,#5a0f2c,#b0285a 55%,#ff5d8f)">
-          <span class="proj-cat">Media</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+        <div class="bn" style="--bb:#2c0c1b;--ba:#ff5d8f">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></span><div><b>Video Player</b><small>Every format, offline</small></div></div>
+            <div class="bn-pills"><span>All local video formats</span><span>Background &amp; PiP play</span><span>Swipe gesture controls</span></div></div>
+          <div class="dev land"><div class="dev-in"><div class="vid"><svg class="scene" viewBox="0 0 180 100" preserveAspectRatio="xMidYMid slice"><rect width="180" height="100" fill="#3b1428"/><circle cx="132" cy="34" r="14" fill="#ffb547"/><path d="M0 100 L46 52 L78 80 L112 44 L180 100Z" fill="#6a1f43"/><path d="M0 100 L30 78 L60 92 L96 70 L140 90 L180 76 L180 100Z" fill="#8f2a59"/></svg><div class="vt"><span>Trip_Vlog.mp4</span><span>1080p</span></div><span class="playb"></span><span class="side" style="left:8px"><i style="height:60%"></i></span><span class="side" style="right:8px"><i style="height:35%"></i></span><div class="vb"><div style="display:flex;justify-content:space-between"><span>04:12</span><span>12:30</span></div><div class="pb"><i style="width:34%"></i></div></div></div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Media</span>
           <h3>HD Video Player</h3>
           <p>An offline video player for every local video, with background playback and lock-screen controls.</p>
           <ul class="feats"><li>Media3 ExoPlayer + MediaSession</li><li>Folder &amp; thumbnail browsing (Glide)</li><li>Gesture controls, ViewPager2 tabs</li></ul>
@@ -596,11 +718,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- Caller ID -->
       <article class="proj spot reveal" data-cat="utility">
-        <div class="proj-top" style="background:linear-gradient(135deg,#0f3d22,#1a7a44 55%,#5ee69a)">
-          <span class="proj-cat">Utility</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+        <div class="bn" style="--bb:#0c2418;--ba:#5ee69a">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></span><div><b>Caller ID</b><small>Know who's calling</small></div></div>
+            <div class="bn-pills"><span>Caller identification</span><span>Spam &amp; scam warnings</span><span>Block unwanted numbers</span></div></div>
+          <div class="dev"><div class="dev-in"><div class="call"><small>Incoming call</small><span class="cav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><b>Unknown caller</b><small>+92 3xx xxx 4521</small><span class="spam">⚠ Likely spam</span><div class="call-info"><div><span>Reported</span><b>128×</b></div><div><span>Location</span><b>Lahore</b></div></div></div><div class="call-btns"><i style="background:#ff4d6d;transform:rotate(135deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></i><i style="background:#25b864"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></i></div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Utility</span>
           <h3>Caller ID &amp; Call Blocker</h3>
           <p>Shows who is calling and helps users manage unwanted calls, with a clean settings-driven UI.</p>
           <ul class="feats"><li>Caller info screens &amp; call history</li><li>ViewModel + Coroutines architecture</li><li>Preference screens, shimmer loading</li></ul>
@@ -610,11 +734,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- Fonts Keyboard -->
       <article class="proj spot reveal" data-cat="utility">
-        <div class="proj-top" style="background:linear-gradient(135deg,#312060,#6a3fc9 55%,#b59cff)">
-          <span class="proj-cat">Utility</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M7 15h10"/></svg></div>
+        <div class="bn" style="--bb:#1d1436;--ba:#b59cff">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M7 15h10"/></svg></span><div><b>Fonts Keyboard</b><small>Stylish text in any app</small></div></div>
+            <div class="bn-pills"><span>Dozens of font styles</span><span>Works in every app</span><span>Text decorator &amp; flip</span></div></div>
+          <div class="dev"><div class="dev-in"><div class="ui-top"><span>Fonts</span><small>Aa</small></div><div class="kb-out"><span class="on">𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭</span><span>𝐇𝐞𝐥𝐥𝐨 𝐖𝐨𝐫𝐥𝐝</span><span>ℍ𝕖𝕝𝕝𝕠 𝕎𝕠𝕣𝕝𝕕</span><span>Ⓗⓔⓛⓛⓞ</span></div><div class="kb-chips"><i class="on">𝓢𝓬𝓻𝓲𝓹𝓽</i><i>𝐁𝐨𝐥𝐝</i><i>𝔻𝕠𝕦𝕓𝕝𝕖</i></div><div class="keys"><i>q</i><i>w</i><i>e</i><i>r</i><i>t</i><i>y</i><i>u</i><i>i</i><i>o</i><i>p</i><i>a</i><i>s</i><i>d</i><i>f</i><i>g</i><i>h</i><i>j</i><i>k</i><i>l</i><i>⏎</i><i class="w2">⇧</i><i>z</i><i>x</i><i>c</i><i>v</i><i>b</i><i>n</i><i class="w2">⌫</i><i class="w2">?123</i><i class="w6"></i><i class="w2">.</i></div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Utility</span>
           <h3>Fonts Keyboard</h3>
           <p>A custom keyboard (Input Method Service) that types in dozens of stylish fonts in any app.</p>
           <ul class="feats"><li>Custom IME with font styles &amp; themes</li><li>Text decorator, flip &amp; numeric styles</li><li>Copy-ready stylish text generator</li></ul>
@@ -624,11 +750,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- App Locker -->
       <article class="proj spot reveal" data-cat="utility">
-        <div class="proj-top" style="background:linear-gradient(135deg,#1c2433,#36445e 55%,#6b7d9e)">
-          <span class="proj-cat">Security</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <div class="bn" style="--bb:#141b28;--ba:#9fb3d6">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><div><b>App Locker</b><small>Keep private apps private</small></div></div>
+            <div class="bn-pills"><span>PIN &amp; pattern lock</span><span>Fingerprint unlock</span><span>Lock any installed app</span></div></div>
+          <div class="dev"><div class="dev-in"><div class="lockv"><svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Enter PIN</b><div class="pins"><i class="f"></i><i class="f"></i><i></i><i></i></div><div class="pad"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i style="background:none"></i><i>0</i><i style="background:none;color:#9fb3d6">✕</i></div><div class="lock-apps"><i style="background:#25d366"></i><i style="background:#e1306c"></i><i style="background:#1877f2"></i><i style="background:#ffb547"></i></div></div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Security</span>
           <h3>App Locker</h3>
           <p>Protects private apps behind a PIN, pattern or fingerprint lock that appears the moment a locked app opens.</p>
           <ul class="feats"><li>PIN, pattern &amp; biometric unlock</li><li>Foreground app detection service</li><li>Lock overlay &amp; intruder protection</li></ul>
@@ -638,11 +766,20 @@ footer{padding:40px 0;border-top:1px solid var(--line);margin-top:40px}
 
       <!-- Xtream mock -->
       <article class="proj wide spot reveal" data-cat="media">
-        <div class="proj-top" style="background:linear-gradient(135deg,#11261c,#1f4a37 55%,#2f7a5a)">
-          <span class="proj-cat">Tooling · Open source</span>
-          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+        <div class="bn" style="--bb:#0d1a14;--ba:#3ddc84">
+          <div class="bn-copy"><div class="bn-app"><span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span><div><b>Xtream Mock Server</b><small>Open-source dev tool</small></div></div>
+            <div class="bn-pills"><span>Live, VOD &amp; series API</span><span>No real provider needed</span><span>Open source on GitHub</span></div></div>
+          <div class="dev land code"><div class="dev-in"><div class="code-dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><div class="code-in"><span class="c-m">$ curl /player_api.php</span>
+<span class="c-m">  ?action=</span><span class="c-s">get_live_streams</span>
+[
+  { <span class="c-k">"name"</span>: <span class="c-s">"Sports HD"</span>,
+    <span class="c-k">"stream_id"</span>: <span class="c-n">101</span>,
+    <span class="c-k">"category_id"</span>: <span class="c-s">"3"</span> },
+  ...
+]</div></div></div>
         </div>
         <div class="proj-body">
+          <span class="proj-kicker">Tooling · Open source</span>
           <h3>Xtream Mock Server</h3>
           <p>A JavaScript mock of the Xtream Codes API, so IPTV apps can be developed and tested without a real provider.</p>
           <ul class="feats"><li>Mocks live, VOD &amp; series endpoints</li><li>Speeds up IPTV client development</li></ul>
@@ -957,7 +1094,11 @@ const CONFIG = {
       const res=await fetch('https://formsubmit.co/ajax/'+encodeURIComponent(CONFIG.email),{
         method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
       const data=await res.json().catch(()=>({}));
-      if(!res.ok||String(data.success)==='false')throw new Error(data.message||'Request failed');
+      if(!res.ok||String(data.success)==='false'){
+        // FormSubmit blocks delivery until the owner clicks "Activate Form" in the email it sends to CONFIG.email
+        if(/activat/i.test(data.message||''))console.warn('[contact form] FormSubmit is not activated yet. Open the "Activate Form" email sent to '+CONFIG.email+' and click Activate.');
+        throw new Error(data.message||'Request failed');
+      }
       setAlert('ok',`<b>Thanks ${name.split(' ')[0]}, your message has been sent!</b><br>I'll get back to you at ${email.replace(/</g,'&lt;')} soon.`);
       form.reset();
     }catch(err){
